@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Мазето на баба</title>
+		<meta charset="utf-8">		
+		<meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width-device-width,initial-scale=1.0">
+	
+		
+    </head>
+	<body id="body">
+	
+	
+	
+    <script type="text/javascript">
+	
+	    // съобщения
+		const question_functionality_1 ={
+		      NUMBER_OF_PANS:           "Колко тигана има в кухнята?",
+		      NUMBER_OF_POTS:           "Колко тенджери има в кухнята?",
+		      WIDTH_OF_THE_KITCHEN:     "Колко сантиметра е широка кухнята?",
+		      LENGTH_OF_THE_KITCHEN:    "Колко сантиметра е дълга кухнята?",
+			  HEIGHT_OF_THE_KITCHEN:    "Колко сантиметра е висока кухнята?",
+			  NAME_OF_THE_COOK:         "Как се казва главният готвач?",
+			  NUMBER_OF_COOKS:          "Колко готвачи работят в кухнята?",
+			  NUMBER_OF_SERVERS:        "Колко сервитьори работят в ресторанта?",
+              RESPONSIBLE_SAUCE:        "Как се казва отговорника на сосовете ?",
+              MIN_TEMP_KITCHEN:         "Каква е минималната температура в кухнята?",
+              MAX_TEMP_KITCHEN:         "Каква е максималната температура в кухнята?",
+			  USER_BANK_BALANCE:        "Колко парички имате в банковата си сметка?",
+			  DAILY_TURNOVER:           "Колко парички е дневният оборот на ресторанта ви?",
+              OPENING_HOUR:             "В колко часа отваряте?",
+			  CLOSING_HOUR:             "В колко часа затваряте?",
+
+		                        }
+	
+	    
+
+	// променливи 
+	
+	          answersCounter = 0;
+
+	          let numberOfPans;
+		      let numberOfPots;       
+		      let widthOfTheKitchen;
+		      let lenghtOfTheKitchen;
+			  let heightOfTheKitchen;
+			  let nameOfTheCook;
+			  let numberOfCooks;
+			  let numberOfSevers;
+              let responsibleSauce;
+              let minTempKitchen;
+              let maxTempKitchen;
+			  let userBankBalance;
+			  let dailyTurnover;
+              let openingHour;
+			  let closingHour;
+			  alert("Следват 15 задължителни въпроса.");
+			  
+			  
+         while(answersCounter==0){
+              numberOfPans              = prompt(question_functionality_1.NUMBER_OF_PANS);
+		      numberOfPots              = prompt(question_functionality_1.NUMBER_OF_POTS);         
+		      widthOfTheKitchen         = prompt(question_functionality_1.WIDTH_OF_THE_KITCHEN);
+		      lenghtOfTheKitchen        = prompt(question_functionality_1.LENGTH_OF_THE_KITCHEN);
+			  heightOfTheKitchen        = prompt(question_functionality_1.HEIGHT_OF_THE_KITCHEN);
+			  nameOfTheCook             = prompt(question_functionality_1.NAME_OF_THE_COOK);
+			  numberOfCooks             = prompt(question_functionality_1.NUMBER_OF_COOKS);
+			  numberOfSevers            = prompt(question_functionality_1.NUMBER_OF_SERVERS);
+              responsibleSauce          = prompt(question_functionality_1.RESPONSIBLE_SAUCE);
+              minTempKitchen            = prompt(question_functionality_1.MIN_TEMP_KITCHEN);
+              maxTempKitchen            = prompt(question_functionality_1.MAX_TEMP_KITCHEN);
+			  userBankBalance           = prompt(question_functionality_1.USER_BANK_BALANCE);
+			  dailyTurnover             = prompt(question_functionality_1.DAILY_TURNOVER);
+              openingHour               = prompt(question_functionality_1.OPENING_HOUR);
+			  closingHour               = prompt(question_functionality_1.CLOSING_HOUR);
+              if(numberOfPans&&numberOfPots&&widthOfTheKitchen&&lenghtOfTheKitchen&&heightOfTheKitchen&&
+			  nameOfTheCook&&numberOfCooks&&numberOfSevers&&responsibleSauce&&minTempKitchen&&maxTempKitchen&&
+			  userBankBalance&&dailyTurnover&&openingHour&&closingHour){
+			       answersCounter =1;
+				 
+			  }  else 
+			       alert("Има непопълнени въпроси. Моля, опитайте отново!");
+				   continue;
+             }
+	
+	          // Опционални въпроси към функционалност 1
+			  let userChoiceOptionalQuestion = prompt("Желаете ли да отговаряте на опционални въпроси? (Y/N)");
+	          
+			  if(userChoiceOptionalQuestion=="Y"){
+			  
+			    let refrigeratorAvailable      = prompt("Разполагате ли с газов хладилник? (Y/N)");
+			    let gasStoveAvailable          = prompt("Разполагате ли с газов котлон? (Y/N)");
+			    let combiOvenAvailable         = prompt("Разполагате ли с конвектомат? (Y/N)");
+			    let electricGrillAvailable     = prompt("Разполагате ли с електрическа скара? (Y/N)");
+			    let aspiratorAvailable         = prompt("Разполагате ли с аспиратор? (Y/N)");
+			  } 
+		 
+		 
+		 // функционалност 2 - Избор на меню
+		        
+				let menuSelection              = prompt("Какво ще хапвате? (1) Месо (2) Вегетарианско (3) Десерт");
+				
+				
+				
+		//ако е избрано месно меню
+		
+		 if(menuSelection==1){
+				let portionSize                = prompt("Колко голяма порция предпочитате? (1) малка - 450 грама (2) средна - 750 грама (3) голяма - 950 грама");
+ 				let degreeOfBaking             = prompt("Каква разновидност на изпичане желаете? (1) RERE (2) MEDIUM (3) WELL DONE");
+               
+		  alert("Вашата поръчка е взета, моля изчакайте!");
+		  
+		    if(degreeOfBaking==1){
+		        if(gasStoveAvailable=="N"&&electricGrillAvailable=="Y"&&aspiratorAvailable=="Y"&&portionSize==1&&minTempKitchen>35&&maxTempKitchen<49){
+		           alert("Вашата поръчка е изпълнена успешно. Благодаря Ви, че хапнахте при нас");
+				 } else alert("Ресторантът не може да изпълни вашата поръчка, започваме процедура по самоунищожение. Благодаря ви, че хапнахте при нас.");
+			 
+			 
+		    if(degreeOfBaking==2){
+		        if(combiOvenAvailable=="Y"&&numberOfCooks==5&&portionSize==2&&nameOfTheCook=="Иван"){
+		           alert("Вашата поръчка е изпълнена успешно. Благодаря Ви, че хапнахте при нас");
+				 } else alert("Ресторантът не може да изпълни вашата поръчка, започваме процедура по самоунищожение. Благодаря ви, че хапнахте при нас.");
+
+			 }
+			 
+		    if(degreeOfBaking==3){
+		        if(closingHour <=22&&(responsibleSauce=="Петър"||responsibleSauce=="Радо")){
+		           alert("Вашата поръчка е изпълнена успешно. Благодаря Ви, че хапнахте при нас");
+				 } else alert("Ресторантът не може да изпълни вашата поръчка, започваме процедура по самоунищожение. Благодаря ви, че хапнахте при нас.");
+				 			 
+				if(widthOfTheKitchen*lenghtOfTheKitchen==45&&(numberOfPans==3||numberOfPots==2)){
+		           alert("Вашата поръчка е изпълнена успешно. Благодаря Ви, че хапнахте при нас");
+				 } else alert("Ресторантът не може да изпълни вашата поръчка, започваме процедура по самоунищожение. Благодаря ви, че хапнахте при нас.");
+			 }
+		}
+			 
+			 
+			 //ако е избрано вегетарянско меню
+			 
+		  if(menuSelection==2){ 
+				let typeOfDish                 = prompt("Направете свое избор! (1) Вегетарианско (2) Веганско (3) Паскатерианско");
+               
+		  alert("Вашата поръчка е взета, моля изчакайте!");
+		  
+		    if(typeOfDish==1){
+		        if(combiOvenAvailable=="N"||electricGrillAvailable=="N"||aspiratorAvailable=="N"){
+		           alert("Вашата поръчка е изпълнена успешно. Благодаря Ви, че хапнахте при нас");
+				 } else alert("Ресторантът не може да изпълни вашата поръчка, започваме процедура по самоунищожение. Благодаря ви, че хапнахте при нас.");
+			}
+			 
+		    if(typeOfDish==2){
+		        if(refrigeratorAvailable=="Y"&&nameOfTheCook=="Манол"&&numberOfCooks>=3&&numberOfCooks<=11&&numberOfSevers!=7){
+		           alert("Вашата поръчка е изпълнена успешно. Благодаря Ви, че хапнахте при нас");
+				 } else alert("Ресторантът не може да изпълни вашата поръчка, започваме процедура по самоунищожение. Благодаря ви, че хапнахте при нас.");
+
+			}
+			 
+		    if(typeOfDish==3){
+		        if((electricGrillAvailable=="Y"&&userChoiceOptionalQuestion=="Y")||(widthOfTheKitchen*lenghtOfTheKitchen*heightOfTheKitchen<13&&userBankBalance<158000)){
+		           alert("Вашата поръчка е изпълнена успешно. Благодаря Ви, че хапнахте при нас");
+				 } else alert("Ресторантът не може да изпълни вашата поръчка, започваме процедура по самоунищожение. Благодаря ви, че хапнахте при нас.");			 			 
+	        } 
+		}
+		     //ако е избран десерт
+		  
+		    if(menuSelection==3){ 
+				let typeOfDessert                = prompt("Направете свое избор! (1) Торта (2) Сладолед");
+				
+                let addictedToSugar              = prompt("Пристрастени ли сте към захарта? (Y/N)");  
+                if(addictedToSugar=="Y"){
+				  alert("Много, много лошо! Захарта уврежда вашето здраве!");
+				  } else alert("Вашата поръчка е взета, моля изчакайте!");
+		  
+		        if(typeOfDessert==1){
+		                 if(refrigeratorAvailable=="Y"&&closingHour==19&&aspiratorAvailable=="N"&&userBankBalance>=15000&&userBankBalance<=50000){
+		                     alert("Вашата поръчка е изпълнена успешно. Благодаря Ви, че хапнахте при нас");
+				           } else if(nameOfTheCook=="Румен"){
+				 		        alert("Вашата поръчка е изпълнена успешно. Благодаря Ви, че хапнахте при нас");
+                                   } else alert("Ресторантът не може да изпълни вашата поръчка, започваме процедура по самоунищожение. Благодаря ви, че хапнахте при нас.");
+          	    }
+			 
+		                if(typeOfDessert==2){
+						    
+						let tasteIceCream = prompt("Изберете вкус на сладоледа! (1) ягода (2) банан (3) ванилия");
+                               if(addictedToSugar=="Y"){
+		                       alert("Ресторантът не може да изпълни вашата поръчка защото сте пристрастен към захарта! Ние вярваме, че - Здраветое  в нашата чиния");
+				               } 
+							   if(addictedToSugar=="N"&&tasteIceCream==2){
+		                       alert("Вашата поръчка е изпълнена успешно. Благодаря Ви, че хапнахте при нас");
+				               }  else ("Ресторантът не може да изпълни вашата поръчка, започваме процедура по самоунищожение. Благодаря ви, че хапнахте при нас.");
+
+			            }
+		    }
+			 
+</script>
+	
+	
+	</body>
+	</html>
